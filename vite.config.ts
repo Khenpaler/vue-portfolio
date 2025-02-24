@@ -8,7 +8,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/khen-portfolio-vue-version/',
+  base: process.env.NODE_ENV === 'production' 
+    ? '/khen-portfolio-vue-version/'
+    : '/',
   css: {
     postcss: {
       plugins: [tailwind(), autoprefixer()],
