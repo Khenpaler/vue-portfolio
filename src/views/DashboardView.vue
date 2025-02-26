@@ -37,14 +37,14 @@ onMounted(() => {
                 >Download Resume
                 </a>
             </div>
-            <div class="flex gap-4 md:gap-7 ml-2 md:ml-5">
-                <a href="https://web.facebook.com/khenpro123" class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+            <div class="flex py-2 gap-4 md:gap-7 ml-2 md:ml-5">
+                <a href="https://web.facebook.com/khenpro123" class="text-xl md:text-4xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
                     <i class="pi pi-facebook" />
                 </a>
-                <a href="https://www.tiktok.com/@khen732" class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                <a href="https://www.tiktok.com/@khen732" class="text-xl md:text-4xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
                     <i class="pi pi-tiktok" />
                 </a>
-                <a href="https://github.com/Khenpaler" class="text-xl md:texdt-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                <a href="https://github.com/Khenpaler" class="text-xl md:text-4xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
                     <i class="pi pi-github" />
                 </a>
             </div>

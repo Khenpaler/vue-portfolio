@@ -25,7 +25,6 @@ const handleImageClick = () => {
     <div class="relative aspect-video overflow-hidden">
       <img 
         :src="imageUrl" 
-        :alt="title"
         class="w-full h-full object-cover"
       >
       <!-- Hover Overlay -->
