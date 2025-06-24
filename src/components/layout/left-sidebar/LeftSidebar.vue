@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SidebarProps } from '@/components/ui/sidebar'
-import NavMain from '@/components/layout/Sidebar/NavMain.vue'
-import SideBarLogo from '@/components/layout/Sidebar/SideBarLogo.vue'
+import NavMain from '@/components/layout/left-sidebar/NavMain.vue'
+import SideBarLogo from '@/components/layout/left-sidebar/SideBarLogo.vue'
 import {
   Sidebar,
   SidebarContent,

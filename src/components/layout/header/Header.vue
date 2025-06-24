@@ -11,9 +11,45 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { SidebarTrigger } from '@/components/ui/sidebar'
 import { useRoute } from 'vue-router'
-import DarkMode from '@/components/layout/Header/DarkMode.vue'
+import {
+  Home,
+  User,
+  FolderGit2,
+  Mail
+} from 'lucide-vue-next'
+
+const props = defineProps({
+  showNav: {
+    type: Boolean,
+    default: false
+  }
+})
 
 const route = useRoute()
+
+// Navigation items
+const navItems = [
+  {
+    title: 'Home',
+    url: '/',
+    icon: Home,
+  },
+  {
+    title: 'About',
+    url: '/about',
+    icon: User,
+  },
+  {
+    title: 'Projects',
+    url: '/projects',
+    icon: FolderGit2,
+  },
+  {
+    title: 'Contact',
+    url: '/contact',
+    icon: Mail,
+  },
+]
 
 // Convert route path to breadcrumb items
 const getBreadcrumbPath = () => {
@@ -49,14 +85,19 @@ const path = computed(() => {
   }
   return items
 })
+
+// Check if a nav item is active
+const isActive = (url: string) => {
+  return route.path === url
+}
 </script>
 
 <template>
   <header class="flex h-16 shrink-0 items-center justify-between transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
     <div class="flex items-center gap-2 px-4">
-      <SidebarTrigger class="-ml-1" />
-      <Separator orientation="vertical" class="mr-2 h-4" />
-      <Breadcrumb>
+      <SidebarTrigger v-if="!showNav" class="-ml-1" />
+      <Separator v-if="!showNav" orientation="vertical" class="mr-2 h-4" />
+      <Breadcrumb v-if="!showNav">
         <BreadcrumbList>
           <BreadcrumbItem v-for="(item, index) in path" :key="index" class="hidden md:block">
             <router-link 
@@ -71,9 +112,20 @@ const path = computed(() => {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-    </div>
-    <div class="px-4">
-      <DarkMode />
+      
+      <!-- Header Navigation -->
+      <nav v-if="showNav" class="flex items-center space-x-4">
+        <router-link 
+          v-for="item in navItems" 
+          :key="item.url"
+          :to="item.url"
+          class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors"
+          :class="isActive(item.url) ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-foreground hover:bg-accent'"
+        >
+          <component :is="item.icon" class="h-4 w-4 mr-2" />
+          {{ item.title }}
+        </router-link>
+      </nav>
     </div>
   </header>
 </template> 

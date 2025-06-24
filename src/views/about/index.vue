@@ -4,6 +4,8 @@
       <span class="dark:text-white">What Do I Do?</span>
     </h1>
 
+    <!-- <Carousel /> -->
+
     <!-- Web Development Section -->
     <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
       <div class="flex-1 space-y-4 animate-fade-in-up">
@@ -75,3 +77,8 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+// import Carousel from './components/Carousel.vue'
+
+</script>

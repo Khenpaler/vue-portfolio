@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const currentYear = new Date().getFullYear();
-</script>
-
 <template>
     <footer class="pb-4" :class="{ 'bg-gray-100 dark:bg-gray-800': true }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,3 +7,9 @@ const currentYear = new Date().getFullYear();
         </div>
     </footer>
 </template>
+
+<script setup lang="ts">
+
+const currentYear = new Date().getFullYear();
+
+</script>

@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import DashboardView from '@/views/DashboardView.vue'
-import AboutView from '../views/AboutView.vue'
-import ProjectsView from '../views/ProjectsView.vue'
-import ContactView from '../views/ContactView.vue'
+
+import DashboardView from '@/views/dashboard/index.vue'
+import AboutView from '../views/about/index.vue'
+import ProjectsView from '../views/portfolio/index.vue'
+import ContactView from '../views/contact/index.vue'
 
 
 const router = createRouter({
