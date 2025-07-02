@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import DashboardIntro from '@/views/dashboard/components/DashboardIntro.vue';
-import DashboardProfileImage from '@/views/dashboard/components/DashboardProfileImage.vue';
-</script>
-
 <template>
   <div class="flex flex-1 flex-col gap-4 p-4 pt-0 mt-32">
     <div class="grid auto-rows-min gap-4 md:grid-cols-3">
@@ -15,6 +10,11 @@ import DashboardProfileImage from '@/views/dashboard/components/DashboardProfile
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import DashboardIntro from '@/views/dashboard/components/DashboardIntro.vue';
+import DashboardProfileImage from '@/views/dashboard/components/DashboardProfileImage.vue';
+</script>
 
 <style scoped>
 .typing-cursor {
