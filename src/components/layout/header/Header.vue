@@ -1,9 +1,53 @@
+<template>
+  <header class="flex h-16 shrink-0 items-center justify-between transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+    <div class="flex items-center gap-2 px-4">
+      <SidebarTrigger v-if="!showNav" class="-ml-1" />
+      <Separator v-if="!showNav" orientation="vertical" class="mr-2 h-4" />
+      <Breadcrumb v-if="!showNav">
+        <BreadcrumbList>
+          <BreadcrumbItem v-for="(item, index) in path" :key="index" class="hidden md:block">
+            <router-link 
+              v-if="!item.current" 
+              :to="item.href"
+              class="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
+            >
+              {{ item.label }}
+            </router-link>
+            <BreadcrumbPage v-else>{{ item.label }}</BreadcrumbPage>
+            <BreadcrumbSeparator v-if="index < path.length - 1" class="hidden md:block" />
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+      
+      <!-- Header Navigation -->
+      <nav v-if="showNav" class="flex items-center space-x-4">
+        <router-link 
+          v-for="item in navItems" 
+          :key="item.url"
+          :to="item.url"
+          class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors"
+          :class="isActive(item.url) ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-foreground hover:bg-accent'"
+        >
+          <component :is="item.icon" class="h-4 w-4 mr-2" />
+          {{ item.title }}
+        </router-link>
+      </nav>
+    </div>
+    <div class="items-center gap-2 px-4 hidden">
+      <router-link 
+      to="/auth/login" 
+      class="px-4 py-2 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors dark:bg-primary dark:text-black dark:hover:bg-primary/80">
+        Login
+      </router-link>
+    </div>
+  </header>
+</template> 
+
 <script setup lang="ts">
 import { computed } from 'vue'
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -91,41 +135,3 @@ const isActive = (url: string) => {
   return route.path === url
 }
 </script>
-
-<template>
-  <header class="flex h-16 shrink-0 items-center justify-between transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-    <div class="flex items-center gap-2 px-4">
-      <SidebarTrigger v-if="!showNav" class="-ml-1" />
-      <Separator v-if="!showNav" orientation="vertical" class="mr-2 h-4" />
-      <Breadcrumb v-if="!showNav">
-        <BreadcrumbList>
-          <BreadcrumbItem v-for="(item, index) in path" :key="index" class="hidden md:block">
-            <router-link 
-              v-if="!item.current" 
-              :to="item.href"
-              class="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground"
-            >
-              {{ item.label }}
-            </router-link>
-            <BreadcrumbPage v-else>{{ item.label }}</BreadcrumbPage>
-            <BreadcrumbSeparator v-if="index < path.length - 1" class="hidden md:block" />
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-      
-      <!-- Header Navigation -->
-      <nav v-if="showNav" class="flex items-center space-x-4">
-        <router-link 
-          v-for="item in navItems" 
-          :key="item.url"
-          :to="item.url"
-          class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors"
-          :class="isActive(item.url) ? 'bg-primary/10 text-primary' : 'text-muted-foreground hover:text-foreground hover:bg-accent'"
-        >
-          <component :is="item.icon" class="h-4 w-4 mr-2" />
-          {{ item.title }}
-        </router-link>
-      </nav>
-    </div>
-  </header>
-</template> 

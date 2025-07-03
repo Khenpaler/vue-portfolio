@@ -5,10 +5,12 @@
     </h1>
 
     <Carousel />
+    
+    <TechnologiesTools />
   </div>
 </template>
 
 <script setup lang="ts">
 import Carousel from './components/Carousel.vue'
-
+import TechnologiesTools from './components/TechnologiesTools.vue'
 </script>

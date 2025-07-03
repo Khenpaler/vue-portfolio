@@ -3,6 +3,7 @@
     <div class="grid auto-rows-min gap-4 md:grid-cols-3">
       <div class="col-span-full md:col-span-2 aspect-auto rounded-xl">
         <DashboardIntro />
+        <GithubContributions />
       </div>
       <div class="col-span-full md:col-span-1 aspect-square rounded-xl">
         <DashboardProfileImage />
@@ -13,6 +14,7 @@
 
 <script setup lang="ts">
 import DashboardIntro from '@/views/dashboard/components/DashboardIntro.vue';
+import GithubContributions from '@/views/dashboard/components/GithubContributions.vue';
 import DashboardProfileImage from '@/views/dashboard/components/DashboardProfileImage.vue';
 </script>
 
