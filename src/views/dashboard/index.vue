@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-1 flex-col gap-4 p-4 pt-0 mt-32">
+  <div class="mx-auto flex flex-1 flex-col gap-4 p-4 pt-0 mt-32">
     <div class="grid auto-rows-min gap-4 md:grid-cols-3">
       <div class="col-span-full md:col-span-2 aspect-auto rounded-xl">
         <DashboardIntro />

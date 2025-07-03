@@ -5,7 +5,9 @@
       <div class="relative flex flex-col min-h-screen">
         <Header class="relative z-20" :show-nav="!showSidebar" />
         <ParticlesBackground class="absolute inset-0 z-0" />
-        <main class="flex-grow relative z-10">
+        <main :class="[
+          'flex-grow relative z-10 max-w-7xl mx-auto w-full'
+        ]">
           <slot></slot>
         </main>
         <Footer class="relative z-20" />

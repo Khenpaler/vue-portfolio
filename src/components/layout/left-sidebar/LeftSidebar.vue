@@ -34,8 +34,8 @@ const navMain = [
     icon: User,
   },
   {
-    title: 'Projects',
-    url: '/projects',
+    title: 'Portfolio',
+    url: '/portfolio',
     icon: FolderGit2,
   },
   {

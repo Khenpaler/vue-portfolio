@@ -1,6 +1,9 @@
 <template>
   <header class="flex h-16 shrink-0 items-center justify-between transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-    <div class="flex items-center gap-2 px-4">
+    <div :class="[
+      'flex items-center gap-2 px-4',
+      showNav ? 'max-w-7xl mx-auto w-full' : ''
+    ]">
       <SidebarTrigger v-if="!showNav" class="-ml-1" />
       <Separator v-if="!showNav" orientation="vertical" class="mr-2 h-4" />
       <Breadcrumb v-if="!showNav">
@@ -84,8 +87,8 @@ const navItems = [
     icon: User,
   },
   {
-    title: 'Projects',
-    url: '/projects',
+    title: 'Portfolio',
+    url: '/portfolio',
     icon: FolderGit2,
   },
   {
