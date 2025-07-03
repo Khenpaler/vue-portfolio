@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+
 import HTML from '@/assets/about/technologies/html.svg'
 import CSS from '@/assets/about/technologies/css.svg'
 import JavaScript from '@/assets/about/technologies/javascript.svg'

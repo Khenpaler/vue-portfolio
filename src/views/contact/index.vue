@@ -1,50 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import emailjs from '@emailjs/browser';
-import { useToast } from 'vue-toastification';
-
-const toast = useToast();
-
-const formData = ref({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-});
-
-const loading = ref(false);
-const error = ref('');
-const success = ref(false);
-
-const submitForm = async () => {
-  loading.value = true;
-  error.value = '';
-  success.value = false;
-
-  try {
-    await emailjs.send(
-      'service_t58sigm', // Replace with your EmailJS service ID
-      'template_8ffwfkl', // Replace with your EmailJS template ID
-      {
-        from_name: formData.value.name,
-        from_email: formData.value.email,
-        subject: formData.value.subject,
-        message: formData.value.message,
-      },
-      'UNdNG9DNyX7rde5xm' // Replace with your EmailJS public key
-    );
-    
-    success.value = true;
-    formData.value = { name: '', email: '', subject: '', message: '' };
-    toast.success("Message sent successfully!");
-  } catch (e) {
-    error.value = 'Failed to send message. Please try again later.';
-  } finally {
-    loading.value = false;
-  }
-};
-</script>
-
 <template>
   <div class="max-w-2xl mx-auto p-8">
     <h1 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">Get in Touch</h1>
@@ -130,3 +83,52 @@ const submitForm = async () => {
     </form>
   </div>
 </template>
+
+<script setup lang="ts">
+
+import { ref } from 'vue';
+
+import emailjs from '@emailjs/browser';
+import { useToast } from 'vue-toastification';
+
+const toast = useToast();
+
+const formData = ref({
+  name: '',
+  email: '',
+  subject: '',
+  message: ''
+});
+
+const loading = ref(false);
+const error = ref('');
+const success = ref(false);
+
+const submitForm = async () => {
+  loading.value = true;
+  error.value = '';
+  success.value = false;
+
+  try {
+    await emailjs.send(
+      'service_t58sigm', // Replace with your EmailJS service ID
+      'template_8ffwfkl', // Replace with your EmailJS template ID
+      {
+        from_name: formData.value.name,
+        from_email: formData.value.email,
+        subject: formData.value.subject,
+        message: formData.value.message,
+      },
+      'UNdNG9DNyX7rde5xm' // Replace with your EmailJS public key
+    );
+    
+    success.value = true;
+    formData.value = { name: '', email: '', subject: '', message: '' };
+    toast.success("Message sent successfully!");
+  } catch (e) {
+    error.value = 'Failed to send message. Please try again later.';
+  } finally {
+    loading.value = false;
+  }
+};
+</script>

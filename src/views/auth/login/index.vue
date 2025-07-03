@@ -59,9 +59,12 @@
 </template>
 
 <script setup lang="ts">
+
 import { ref } from 'vue'
-import ParticlesBackground from '@/components/ParticlesBackground.vue'
+
 import { Eye, EyeOff } from 'lucide-vue-next'
+
+import ParticlesBackground from '@/components/ParticlesBackground.vue'
 
 const showPassword = ref(false)
 </script>
