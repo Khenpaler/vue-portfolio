@@ -29,6 +29,13 @@ import kioskWeb9 from '@/assets/projects/kiosk-web/9.png';
 import kioskWeb10 from '@/assets/projects/kiosk-web/10.png';
 import kioskWeb11 from '@/assets/projects/kiosk-web/11.png';
 
+import kioskMobile1 from '@/assets/projects/kiosk-mobile/1.jpg';
+import kioskMobile2 from '@/assets/projects/kiosk-mobile/2.png';
+import kioskMobile3 from '@/assets/projects/kiosk-mobile/3.png';
+import kioskMobile4 from '@/assets/projects/kiosk-mobile/4.png';
+import kioskMobile5 from '@/assets/projects/kiosk-mobile/5.png';
+import kioskMobile6 from '@/assets/projects/kiosk-mobile/6.png';
+
 import manhwaReader1 from '@/assets/projects/manhwa-reader/1.png';
 import manhwaReader2 from '@/assets/projects/manhwa-reader/2.png';
 import manhwaReader3 from '@/assets/projects/manhwa-reader/3.png';
@@ -66,8 +73,8 @@ export const projects = [
     {
         title: "<b>Kiosk Mobile</b>",
         description: "Contributed to the mobile development of Kiosk, during my internship at YAHSHUA Outsourcing Worldwide, Inc.",
-        imageUrl: NoImage,
-        images: [],
+        imageUrl: kioskMobile1,
+        images: [kioskMobile1, kioskMobile2, kioskMobile3, kioskMobile4, kioskMobile5, kioskMobile6],
         techStack: [
             { name: "Flutter" },
             { name: "Dart" }
