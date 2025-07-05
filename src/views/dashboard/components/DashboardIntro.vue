@@ -8,11 +8,12 @@
       I specialize in Laravel, React Native, and Next.js to deliver seamless web and mobile solutions.
     </p>
     <div>
+      <!-- For a tag disabling -->
+      <!-- style="pointer-events: none; opacity: 0.5;" -->
       <a 
-        href="https://drive.google.com/file/d/1Vu-rHKTjfpo3JQ2bSX4rL2OXj0iLWhv4/view?usp=sharing"
+        href="https://docs.google.com/document/d/1zLVQDtWkbyQB6lMJmcc6hEpOxZQR-9qxf2fML5LFwHA/edit?usp=sharing"
         class="px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-semibold border-2 border-primary rounded-xl hover:bg-primary hover:text-secondary bg-transparent text-primary"
-        style="pointer-events: none; opacity: 0.5;"
-        >Download CV
+        >Updated CV
       </a>
     </div>
     <div class="flex py-2 gap-4 md:gap-7 ml-2 md:ml-5">
